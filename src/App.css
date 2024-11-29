@@ -9,7 +9,7 @@ body {
 }
 body h4{
   text-transform: uppercase;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     font-family: "Barlow", sans-serif;
 }
 .body::-webkit-scrollbar {
@@ -26,10 +26,11 @@ body h4{
   z-index: 1000;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   background-color: #f4f4f4;
   border-bottom: 2px solid #ccc;
 }
+
 /* .blank{
   display: block;
   padding: 10px 20px;
@@ -67,10 +68,12 @@ body h4{
 .moving-line {
   background-color: #333;
   color: #fff;
-  margin-top: 80px;
-  padding: 10px 0;
+  margin-top: 90px;
+  padding: 15px 0;
   text-align: center;
+ 
   overflow: hidden;
+  width: 100%;
 }
 
 .moving-line p {
@@ -85,6 +88,7 @@ body h4{
 .navbar {
   color: #eee6e6;
   background-color: chocolate;
+  width: 100%;
   /* overflow: hidden; */
 }
 .navbar option{
@@ -136,6 +140,54 @@ body h4{
 .navbar ul li .dropdown li:hover {
   background-color: rgb(240, 135, 36);
 }
+.navbar .nav-links {
+  transition: all 0.3s ease;
+}
+.navbar .menu-toggle {
+  display: none; /* Hide the toggle button on larger screens */
+  
+}
+.menu-toggle{
+  
+  justify-self: end;
+
+}
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    display: none; /* Hide links by default */
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px; /* Adjust based on the height of the navbar */
+    left: 0;
+    width: 100%;
+    
+    background-color: #333;
+    padding: 1rem 0;
+  }
+
+  .navbar .nav-links.active {
+    display: flex; /* Show links when active */
+  }
+
+  .navbar .menu-toggle {
+    display: block;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .navbar .nav-links li {
+    margin: 1rem 0; /* Adjust spacing for mobile */
+  }
+}
+/* @media (max-width:425px){
+  .navbar ul{
+    display: none;
+
+  }
+} */
 .marquee {
   width: 100%;
   overflow: hidden;
@@ -176,7 +228,7 @@ body h4{
 }
 
 .banner-img {
-  width: 100vw;
+  width: 100%;
   height: auto;
   /* display: block; */
 }
@@ -553,18 +605,30 @@ body h4{
 .companies{
   display: flex;
   flex-direction: row;
+  width: 100%;
   padding: auto;
   margin: 8px;
+  overflow: hidden;
   background-color: rgb(235, 235, 129);
 }
 .companies img{
   height: 150px; 
-  width: fit-content;
+  /* width: auto; */
   /* width: 100%; */
   overflow: hidden;
   white-space: nowrap;
   box-sizing: border-box;
-  animation: marquee 2.5s linear infinite;
+  animation: marquee 3s linear infinite;
+}
+@media (max-width: 768px) {
+  .companies{
+    /* height: auto; */
+   /* width: 100vw; */
+  }
+  .companies img{
+   /* height: auto; */
+   /* width: 100vw; */
+  }
 }
 
 .footerBottom{

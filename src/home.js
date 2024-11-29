@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -17,6 +17,11 @@ const Home = () => {
         "Testimonials",
         "Support"
     ];
+    const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(prevState => !prevState);
+  };
     const sliderSettings = {
         dots: true,
         infinite: true,
@@ -56,7 +61,7 @@ const Home = () => {
 
             {/* Navigation Bar */}
             <nav className="navbar">
-                <ul>
+                <ul className="nav-links">
                     {navOptions.map((option, index) => (
                         <li key={index}>
                             {option}
@@ -68,6 +73,9 @@ const Home = () => {
                         </li>
                     ))}
                 </ul>
+                <div className="menu-toggle" onClick={toggleMenu}>
+                    {menuOpen ? '×' : '☰'}
+      </div>
             </nav>
             {/* banner */}
             <div className="slider-banner">
